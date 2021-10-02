@@ -15,9 +15,9 @@ public interface OrderDao {
 
     void save(Order entity);
 
+    void saveBatch(List<Order> entities);
+
     void update(Order entity);
 
     void delete(long id);
-
-
 }

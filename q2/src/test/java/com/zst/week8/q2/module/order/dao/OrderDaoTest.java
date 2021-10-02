@@ -1,6 +1,7 @@
 package com.zst.week8.q2.module.order.dao;
 
 import com.zst.week8.q2.module.order.entity.Order;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -15,6 +17,8 @@ import java.util.stream.IntStream;
 public class OrderDaoTest {
     @Autowired
     private OrderDao orderDao;
+    @Autowired
+    SqlSessionFactory sqlSessionFactory;
 
     @Test
     public void testInsert() {

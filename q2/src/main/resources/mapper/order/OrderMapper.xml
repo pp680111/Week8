@@ -49,6 +49,17 @@
         ]]>
     </insert>
 
+    <insert id="saveBatch" parameterType="com.zst.week8.q2.module.order.entity.Order">
+        INSERT INTO
+            t_order(user_id, shipping_address, status, price, create_time, update_time)
+        VALUES
+        <foreach collection="entities" item="order" separator=",">
+            (#{order.userId}, #{order.shippingAddress}, #{order.status},
+            #{order.price}, #{order.createTime}, #{order.updateTime})
+        </foreach>
+
+    </insert>
+
     <update id="update" parameterType="com.zst.week8.q2.module.order.entity.Order">
         <![CDATA[
             UPDATE
